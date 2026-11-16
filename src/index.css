@@ -1,0 +1,48 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-heading: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-z-navy: #101D35;
+  --color-z-deep: #0B1426;
+  --color-z-teal: #0D9488;
+  --color-z-teal-hover: #0F766E;
+  --color-z-gold: #E9B44C;
+  --color-z-bg: #F8FAFC;
+  --color-z-surface: #FFFFFF;
+  --color-z-border: #E2E8F0;
+  --color-z-text: #0F172A;
+  --color-z-muted: #64748B;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-editorial {
+  font-family: var(--font-serif);
+}
+
+.font-data {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}

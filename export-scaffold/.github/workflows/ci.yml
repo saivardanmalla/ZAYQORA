@@ -1,0 +1,37 @@
+name: ZAYQORA CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  frontend-checks:
+    name: Next.js Typecheck & Lint
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: export-scaffold/frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install
+      - run: npm run typecheck
+
+  backend-checks:
+    name: FastAPI & Alembic Verification
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: export-scaffold/backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python -m compileall app alembic
+      - run: python -c "import app.main, app.models, app.celery_worker, app.storage; print('Backend modules verified')"

@@ -1,0 +1,6 @@
+{
+  "name": "ZAYQORA — The Complete Digital Restaurant Platform",
+  "description": "Multi-tenant restaurant management SaaS by VIRELEO featuring public restaurant storefronts, owner operations dashboard, real-time kitchen display system, and super admin console.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
