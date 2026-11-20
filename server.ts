@@ -41,9 +41,9 @@ async function bootstrap() {
     });
   }
 
-  const port = Number(process.env.PORT || 3000);
-  server.listen(port, '0.0.0.0', () => {
-    console.log(`ZAYQORA server running on http://0.0.0.0:${port}`);
+  const port = Number(process.env.PORT || 3008);
+  server.listen(port, '127.0.0.1', () => {
+    console.log(`ZAYQORA server running on http://127.0.0.1:${port}`);
   });
 }
 
